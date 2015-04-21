@@ -21,24 +21,10 @@ namespace hrms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //string str = (string)SqlHelper.ExecuteScalar("select * from ygdl where username=@username and password=@password ",new SqlParameter("@name", this.textBox1.Text), new SqlParameter("@password", this.textBox2.Text));
-
-            //if (str != null)
-            //{             
-            //        MessageBox.Show("登陆成功");
-            //        this.Hide();
-            //         Form2 form = new Form2();
-            //         form.ShowDialog();
-            //}
-            //else
-            //{
-            //    MessageBox.Show("用户名或密码错误");
-            //}
             string username, password;
             username = this.textBox1.Text;
             password = this.textBox2.Text;
             using (SqlConnection conn = new SqlConnection(@"Data Source=.;Initial Catalog=hrms;Integrated Security=True"))
-            //conn.ConnectionString = "Data Source=.;Initial Catalog=hrms;Integrated Security=True";
             {
                 conn.Open();//打开数据库 
                 using (SqlCommand cmd = conn.CreateCommand())

@@ -8,19 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace hrms
+namespace hrms.NoticeMan
 {
-    public partial class Form2 : Form
+    public partial class Noticeman : Form
     {
-        public Form2()
+        public Noticeman()
         {
             InitializeComponent();
-        }
-
-        private void 添加员工ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ADD.addStaff  add = new ADD.addStaff();
-            add.ShowDialog();
         }
     }
 }

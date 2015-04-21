@@ -8,19 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace hrms
+namespace hrms.ADD
 {
-    public partial class Form2 : Form
+    public partial class addStaff : Form
     {
-        public Form2()
+        public addStaff()
         {
             InitializeComponent();
         }
 
-        private void 添加员工ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void addStaff_Load(object sender, EventArgs e)
         {
-            ADD.addStaff  add = new ADD.addStaff();
-            add.ShowDialog();
+
         }
     }
 }
