@@ -20,8 +20,7 @@ namespace hrms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string str = (string)SqlHelper.ExecuteScalar("select 用户 from yonghubiao where 用户=@name and 密码=@pwd ",
-            new SqlParameter("@name", this.tb_un.Text), new SqlParameter("@pwd", this.tb_pw.Text));
+            string str = (string)SqlHelper.ExecuteScalar("select * from abo.ygdl where username=@username and password=@password ",new SqlParameter("@name", this.textBox1.Text), new SqlParameter("@password", this.textBox2.Text));
             
             if (str != null)
             {             
@@ -35,8 +34,13 @@ namespace hrms
                 MessageBox.Show("用户名或密码错误");
             }
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+        
+        }
            
          
-        }
+        
     }
 }

@@ -48,7 +48,7 @@ public class DB
         return f;
     }
 
-
+       
     public static bool FillDataTable(string sql, DataTable mytable)
     {
         try
@@ -94,6 +94,42 @@ public class DB
         }
         return true;
     }
+
+    //public static bool ExcuteTransaction(string[] sql)
+    //{
+    //    try
+    //    {
+    //        da.conn.Open();
+    //        da.tran = da.conn.BeginTransaction();
+    //        da.cmd.Transaction = da.tran;
+
+    //        foreach (string sql2 in sql)
+    //        {
+    //            da.cmd.CommandText = sql2;
+    //            if (da.cmd.ExecuteNonQuery() <= 0)
+    //            {
+    //                da.tran.Rollback();
+    //                return false;
+    //            }
+
+    //        }
+    //        da.tran.Commit();
+    //        return true;
+
+    //    }
+
+    //    catch
+    //    {
+    //        da.tran.Rollback();
+    //        return false;
+    //    }
+
+    //    finally
+    //    {
+    //        da.conn.Close();
+
+    //    }
+    //}
 }
 
 
