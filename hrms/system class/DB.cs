@@ -18,6 +18,7 @@ public class DB
     public DB()
     {
         conn.ConnectionString = "Data Source=.;Initial Catalog=hrms;Integrated Security=True";
+
         cmd.Connection = conn;
         ada.SelectCommand = cmd;
     }
