@@ -48,8 +48,6 @@ namespace hrms
                             if (password == dbpassword)
                             {
                                 //如果相等,就登录成功   
-                                //Console.WriteLine("登录成功!");
-                                //MessageBox.Show("登陆成功！");
                                 this.Hide();
                                 Form2 form = new Form2();
                                 form.ShowDialog();

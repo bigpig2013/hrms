@@ -286,6 +286,7 @@
             this.button1.TabIndex = 30;
             this.button1.Text = "提交";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -316,6 +317,7 @@
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "男";
             this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // radioButton2
             // 
@@ -327,6 +329,7 @@
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "女";
             this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // dateTimePicker1
             // 
@@ -334,10 +337,18 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 21);
             this.dateTimePicker1.TabIndex = 35;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "财务部",
+            "市场部",
+            "采购部",
+            "技术部",
+            "生产部",
+            "质检部"});
             this.comboBox1.Location = new System.Drawing.Point(67, 336);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 20);
