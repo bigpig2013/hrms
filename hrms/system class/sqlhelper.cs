@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Threading.Tasks;
 
-namespace WindowsFormsApplication2
+namespace hrms
 {
     class SqlHelper
     {

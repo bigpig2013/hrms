@@ -25,7 +25,7 @@ namespace hrms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string sql = "SELECT * FROM ygdl";
+            string sql = "SELECT * FROM ygxx";
             DataTable dt = new DataTable();
             DB.FillDataTable(sql, dt);
             dataGridView1.DataSource = dt;
