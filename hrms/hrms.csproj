@@ -124,6 +124,7 @@
       <DependentUpon>RewardPStaff.cs</DependentUpon>
     </Compile>
     <Compile Include="system class\DB.cs" />
+    <Compile Include="system class\sqlhelper.cs" />
     <EmbeddedResource Include="Add Staff\addStaff.resx">
       <DependentUpon>addStaff.cs</DependentUpon>
     </EmbeddedResource>

@@ -22,5 +22,13 @@ namespace hrms
             ADD.addStaff  add = new ADD.addStaff();
             add.ShowDialog();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string sql = "SELECT * FROM ygdl";
+            DataTable dt = new DataTable();
+            DB.FillDataTable(sql, dt);
+            dataGridView1.DataSource = dt;
+        }
     }
 }
