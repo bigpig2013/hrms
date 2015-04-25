@@ -67,11 +67,17 @@
     <Compile Include="Add Staff\addStaff.Designer.cs">
       <DependentUpon>addStaff.cs</DependentUpon>
     </Compile>
-    <Compile Include="Add Staff\adminstaff.cs">
+    <Compile Include="Add Staff\changestaff.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Add Staff\adminstaff.Designer.cs">
-      <DependentUpon>adminstaff.cs</DependentUpon>
+    <Compile Include="Add Staff\changestaff.Designer.cs">
+      <DependentUpon>changestaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Add Staff\delstaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add Staff\delstaff.Designer.cs">
+      <DependentUpon>delstaff.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -128,14 +134,20 @@
     <EmbeddedResource Include="Add Staff\addStaff.resx">
       <DependentUpon>addStaff.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Add Staff\adminstaff.resx">
-      <DependentUpon>adminstaff.cs</DependentUpon>
+    <EmbeddedResource Include="Add Staff\changestaff.resx">
+      <DependentUpon>changestaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add Staff\delstaff.resx">
+      <DependentUpon>delstaff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManStaff\adminchange.resx">
+      <DependentUpon>adminchange.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
