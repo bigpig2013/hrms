@@ -17,7 +17,6 @@ namespace hrms
         public Form2()
         {
             InitializeComponent();
-            
         }
 
         private void 添加员工ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -72,7 +71,7 @@ namespace hrms
         {
             
             
-            label1.Text = "当前用户："+ ((Form1)this.Owner).textBox1 .Text  ;
+            label1.Text =  ((Form1)this.Owner).textBox1 .Text  ;
 
         }
 
@@ -210,6 +209,64 @@ namespace hrms
             {
 
                 hrms.RewardPStaff.RewardPStaff add = new RewardPStaff.RewardPStaff();
+
+                add.ShowDialog();
+
+
+            }
+            else
+            {
+                MessageBox.Show("您没有权限操作！");
+            }
+        }
+
+        private void 员工信息ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 密码修改ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string dbrole = ((Form1)this.Owner).textBox1.Text;
+            string sqldb = "server=.;database=hrms;uid=sa;pwd=123456";
+            SqlConnection conn = new SqlConnection(sqldb);
+            conn.Open();
+            string sqllg = "select * from ygdl where username = '" + dbrole + "' and role = 'root'";
+
+            SqlCommand cmd = new SqlCommand(sqllg, conn);
+            cmd.CommandType = CommandType.Text;
+            SqlDataReader sdl = cmd.ExecuteReader();
+            if (sdl.Read())
+            {
+
+                hrms.ManStaff.pwdchange add = new ManStaff.pwdchange();
+
+                add.ShowDialog();
+
+
+            }
+            else
+            {
+                MessageBox.Show("您没有权限操作！");
+            }
+        }
+
+        private void 发布公告ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string dbrole = ((Form1)this.Owner).textBox1.Text;
+            string sqldb = "server=.;database=hrms;uid=sa;pwd=123456";
+            SqlConnection conn = new SqlConnection(sqldb);
+            conn.Open();
+            string sqllg = "select * from ygdl where username = '" + dbrole + "' and role = 'root'";
+
+            SqlCommand cmd = new SqlCommand(sqllg, conn);
+            cmd.CommandType = CommandType.Text;
+            SqlDataReader sdl = cmd.ExecuteReader();
+            if (sdl.Read())
+            {
+
+                hrms.NoticeMan.Noticepub add = new NoticeMan.Noticepub();
+                add.Owner = this;
 
                 add.ShowDialog();
 

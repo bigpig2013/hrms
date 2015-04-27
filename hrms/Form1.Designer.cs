@@ -37,7 +37,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            
             // 
             // label1
             // 
@@ -122,6 +122,7 @@
             this.button5.Text = "我是帽子绿";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
+           
             // 
             // Form1
             // 
@@ -157,6 +158,7 @@
         private System.Windows.Forms.Button button5;
         public System.Windows.Forms.TextBox textBox1;
         public System.Windows.Forms.TextBox textBox2;
+        
     }
 }
 
