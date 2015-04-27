@@ -149,6 +149,9 @@
     <EmbeddedResource Include="ManStaff\adminchange.resx">
       <DependentUpon>adminchange.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mob Staff\MobStaff.resx">
+      <DependentUpon>MobStaff.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -158,6 +161,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RewardPStaff\RewardPStaff.resx">
+      <DependentUpon>RewardPStaff.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

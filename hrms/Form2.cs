@@ -153,5 +153,72 @@ namespace hrms
                 MessageBox.Show("您没有权限操作！");
             }
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void 员工调动ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string dbrole = ((Form1)this.Owner).textBox1.Text;
+            string sqldb = "server=.;database=hrms;uid=sa;pwd=123456";
+            SqlConnection conn = new SqlConnection(sqldb);
+            conn.Open();
+            string sqllg = "select * from ygdl where username = '" + dbrole + "' and role = 'root'";
+
+            SqlCommand cmd = new SqlCommand(sqllg, conn);
+            cmd.CommandType = CommandType.Text;
+            SqlDataReader sdl = cmd.ExecuteReader();
+            if (sdl.Read())
+            {
+
+                hrms.Mob_Staff.MobStaff add = new Mob_Staff.MobStaff(); 
+
+                add.ShowDialog();
+
+
+            }
+            else
+            {
+                MessageBox.Show("您没有权限操作！");
+            }
+        }
+
+        private void 退出ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void 用户管理ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 员工奖惩ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string dbrole = ((Form1)this.Owner).textBox1.Text;
+            string sqldb = "server=.;database=hrms;uid=sa;pwd=123456";
+            SqlConnection conn = new SqlConnection(sqldb);
+            conn.Open();
+            string sqllg = "select * from ygdl where username = '" + dbrole + "' and role = 'root'";
+
+            SqlCommand cmd = new SqlCommand(sqllg, conn);
+            cmd.CommandType = CommandType.Text;
+            SqlDataReader sdl = cmd.ExecuteReader();
+            if (sdl.Read())
+            {
+
+                hrms.RewardPStaff.RewardPStaff add = new RewardPStaff.RewardPStaff();
+
+                add.ShowDialog();
+
+
+            }
+            else
+            {
+                MessageBox.Show("您没有权限操作！");
+            }
+        }
     }
 }
