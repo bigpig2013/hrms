@@ -118,40 +118,44 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="note32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\res\icon\gonggao\note32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="users32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\res\icon\staffddd\users32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="notepencil32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\icon\gonggao\notepencil32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="stop32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\icon\exit\stop32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gear32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\icon\role\gear32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="smile32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\icon\staffjc\smile32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="user32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\icon\addstaff\user32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="userplus32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\icon\addstaff\userplus32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="stop321" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\icon\exit\stop32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  
   <data name="userminus32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\res\icon\addstaff\userminus32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="spanner32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\res\icon\addstaff\spanner32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="smile32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\res\icon\staffjc\smile32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="notepencil32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\res\icon\gonggao\notepencil32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="pencil32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\res\icon\addstaff\pencil32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="userplus32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\res\icon\addstaff\userplus32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="note32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\icon\gonggao\note32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="user32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\res\icon\addstaff\user32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="gear32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\res\icon\role\gear32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="appbar.key" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\appbar.key.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="stop32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\res\icon\exit\stop32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ic_sort_black_24dp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\icon\addstaff\ic_sort_black_24dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

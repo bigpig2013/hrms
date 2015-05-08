@@ -97,6 +97,7 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.Teal;
+            this.button3.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Location = new System.Drawing.Point(238, 307);
             this.button3.Name = "button3";
@@ -148,9 +149,11 @@
             // 
             // adminchange
             // 
+            this.AcceptButton = this.button2;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.CancelButton = this.button3;
             this.ClientSize = new System.Drawing.Size(335, 372);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -163,7 +166,12 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(351, 411);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(351, 411);
             this.Name = "adminchange";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "权限修改";
             this.Load += new System.EventHandler(this.adminchange_Load);
             this.ResumeLayout(false);

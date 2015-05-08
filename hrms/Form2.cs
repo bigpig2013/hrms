@@ -30,7 +30,7 @@ namespace hrms
         private void Form2_Load(object sender, EventArgs e)
         {
             
-            //label1.Text = '"+sdl+"' + ((Form1)this.Owner).textBox1 .Text  ;
+            label1.Text = ((Form1)this.Owner).textBox1 .Text  ;
             //string dbrole = ((Form1)this.Owner).textBox1.Text;
             //string sqldb = "server=.;database=hrms;uid=sa;pwd=123456";
             //SqlConnection conn = new SqlConnection(sqldb);
@@ -147,54 +147,12 @@ namespace hrms
 
         private void 员工奖惩ToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            string dbrole = ((Form1)this.Owner).textBox1.Text;
-            string sqldb = "server=.;database=hrms;uid=sa;pwd=123456";
-            SqlConnection conn = new SqlConnection(sqldb);
-            conn.Open();
-            string sqllg = "select * from ygdl where username = '" + dbrole + "' and role = 'root'";
-
-            SqlCommand cmd = new SqlCommand(sqllg, conn);
-            cmd.CommandType = CommandType.Text;
-            SqlDataReader sdl = cmd.ExecuteReader();
-            if (sdl.Read())
-            {
-
-                hrms.RewardPStaff.RewardPStaff add = new RewardPStaff.RewardPStaff();
-
-                add.ShowDialog();
-
-
-            }
-            else
-            {
-                MessageBox.Show("您没有权限操作！");
-            }
+            
         }
 
         private void 员工调动ToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            string dbrole = ((Form1)this.Owner).textBox1.Text;
-            string sqldb = "server=.;database=hrms;uid=sa;pwd=123456";
-            SqlConnection conn = new SqlConnection(sqldb);
-            conn.Open();
-            string sqllg = "select * from ygdl where username = '" + dbrole + "' and role = 'root'";
-
-            SqlCommand cmd = new SqlCommand(sqllg, conn);
-            cmd.CommandType = CommandType.Text;
-            SqlDataReader sdl = cmd.ExecuteReader();
-            if (sdl.Read())
-            {
-
-                hrms.Mob_Staff.MobStaff add = new Mob_Staff.MobStaff();
-
-                add.ShowDialog();
-
-
-            }
-            else
-            {
-                MessageBox.Show("您没有权限操作！");
-            }
+            
         }
 
         private void 权限修改ToolStripMenuItem_Click_1(object sender, EventArgs e)
@@ -271,18 +229,147 @@ namespace hrms
             this.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form2_SizeChanged(object sender, EventArgs e)
+        {
+            dataGridView1.SetBounds(this.ClientRectangle.Left, this.ClientRectangle.Top + menuStrip1.Height + label3.Height, this.ClientRectangle.Right, this.ClientRectangle.Bottom);
+        }
+
+        
+        private void 奖惩操作ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string dbrole = ((Form1)this.Owner).textBox1.Text;
             string sqldb = "server=.;database=hrms;uid=sa;pwd=123456";
             SqlConnection conn = new SqlConnection(sqldb);
             conn.Open();
-            string sql = "SELECT * FROM ygdl";
-            SqlCommand cmd = new SqlCommand(sql,conn);
-            
+            string sqllg = "select * from ygdl where username = '" + dbrole + "' and role = 'root'";
+
+            SqlCommand cmd = new SqlCommand(sqllg, conn);
+            cmd.CommandType = CommandType.Text;
+            SqlDataReader sdl = cmd.ExecuteReader();
+            if (sdl.Read())
+            {
+
+                hrms.RewardPStaff.RewardPStaff add = new RewardPStaff.RewardPStaff();
+
+                add.ShowDialog();
+
+
+            }
+            else
+            {
+                MessageBox.Show("您没有权限操作！");
+            }
+        }
+
+        private void 调动操作ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string dbrole = ((Form1)this.Owner).textBox1.Text;
+            string sqldb = "server=.;database=hrms;uid=sa;pwd=123456";
+            SqlConnection conn = new SqlConnection(sqldb);
+            conn.Open();
+            string sqllg = "select * from ygdl where username = '" + dbrole + "' and role = 'root'";
+
+            SqlCommand cmd = new SqlCommand(sqllg, conn);
+            cmd.CommandType = CommandType.Text;
+            SqlDataReader sdl = cmd.ExecuteReader();
+            if (sdl.Read())
+            {
+
+                hrms.Mob_Staff.MobStaff add = new Mob_Staff.MobStaff();
+                add.Owner = this;
+
+                add.ShowDialog();
+
+
+            }
+            else
+            {
+                MessageBox.Show("您没有权限操作！");
+            }
+        }
+
+        private void 查看员工ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string sqldb = "server=.;database=hrms;uid=sa;pwd=123456";
+            SqlConnection conn = new SqlConnection(sqldb);
+            string sql = "SELECT * FROM ygxx";
             DataTable dt = new DataTable();
+            using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
+            {
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                this.dataGridView1.DataSource = ds.Tables[0];
+            }
             
-            //DB.FillDataTable(sql, dt);
-            dataGridView1.DataSource = dt;
+            
+        }
+
+        private void 奖惩查看ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string sqldb = "server=.;database=hrms;uid=sa;pwd=123456";
+            SqlConnection conn = new SqlConnection(sqldb);
+            string sql = "SELECT * FROM ygjc";
+            DataTable dt = new DataTable();
+            using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
+            {
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                this.dataGridView1.DataSource = ds.Tables[0];
+            }
+        }
+
+        private void 调动查看ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string sqldb = "server=.;database=hrms;uid=sa;pwd=123456";
+            SqlConnection conn = new SqlConnection(sqldb);
+            string sql = "SELECT * FROM ygdd";
+            DataTable dt = new DataTable();
+            using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
+            {
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                this.dataGridView1.DataSource = ds.Tables[0];
+            }
+        }
+
+        private void 权限查看ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string sqldb = "server=.;database=hrms;uid=sa;pwd=123456";
+            SqlConnection conn = new SqlConnection(sqldb);
+            string sql = "SELECT * FROM ygdl";
+            DataTable dt = new DataTable();
+            using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
+            {
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                this.dataGridView1.DataSource = ds.Tables[0];
+            }
+        }
+
+        private void 查看公告ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string sqldb = "server=.;database=hrms;uid=sa;pwd=123456";
+            SqlConnection conn = new SqlConnection(sqldb);
+            string sql = "SELECT * FROM fbxx";
+            DataTable dt = new DataTable();
+            using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
+            {
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                this.dataGridView1.DataSource = ds.Tables[0];
+            }
         }
     }
 }

@@ -63,9 +63,9 @@ namespace hrms.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap appbar_key {
+        internal static System.Drawing.Bitmap gear32 {
             get {
-                object obj = ResourceManager.GetObject("appbar.key", resourceCulture);
+                object obj = ResourceManager.GetObject("gear32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace hrms.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap gear32 {
+        internal static System.Drawing.Bitmap ic_sort_black_24dp {
             get {
-                object obj = ResourceManager.GetObject("gear32", resourceCulture);
+                object obj = ResourceManager.GetObject("ic_sort_black_24dp", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -136,6 +136,16 @@ namespace hrms.Properties {
         internal static System.Drawing.Bitmap stop32 {
             get {
                 object obj = ResourceManager.GetObject("stop32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap stop321 {
+            get {
+                object obj = ResourceManager.GetObject("stop321", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -166,9 +166,11 @@
             // 
             // changestaff
             // 
+            this.AcceptButton = this.button2;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.CancelButton = this.button3;
             this.ClientSize = new System.Drawing.Size(358, 470);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -183,7 +185,12 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(374, 509);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(374, 509);
             this.Name = "changestaff";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "修改信息";
             this.Load += new System.EventHandler(this.adminstaff_Load);
             this.ResumeLayout(false);

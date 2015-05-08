@@ -216,9 +216,6 @@
     <None Include="res\icon\aaa.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\appbar.key.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="res\icon\addstaff\userplus32.png" />
   </ItemGroup>
   <ItemGroup>
@@ -250,6 +247,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="res\icon\exit\stop32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\icon\addstaff\ic_sort_black_24dp.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -216,7 +216,12 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(386, 480);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(386, 480);
             this.Name = "MobStaff";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "员工调动";
             this.Load += new System.EventHandler(this.MobStaff_Load);
             this.ResumeLayout(false);

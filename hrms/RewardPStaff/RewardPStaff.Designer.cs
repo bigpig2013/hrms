@@ -194,6 +194,7 @@
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.Teal;
+            this.button4.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button4.ForeColor = System.Drawing.Color.White;
             this.button4.Location = new System.Drawing.Point(289, 377);
             this.button4.Name = "button4";
@@ -205,9 +206,11 @@
             // 
             // RewardPStaff
             // 
+            this.AcceptButton = this.button2;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.CancelButton = this.button4;
             this.ClientSize = new System.Drawing.Size(376, 440);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -225,7 +228,12 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(392, 479);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(392, 479);
             this.Name = "RewardPStaff";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "员工奖惩";
             this.Load += new System.EventHandler(this.RewardPStaff_Load);
             this.ResumeLayout(false);

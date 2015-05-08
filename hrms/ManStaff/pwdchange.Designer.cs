@@ -136,6 +136,7 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.Teal;
+            this.button3.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Location = new System.Drawing.Point(259, 289);
             this.button3.Name = "button3";
@@ -147,9 +148,11 @@
             // 
             // pwdchange
             // 
+            this.AcceptButton = this.button2;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.CancelButton = this.button3;
             this.ClientSize = new System.Drawing.Size(362, 345);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -162,7 +165,12 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(378, 384);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(378, 384);
             this.Name = "pwdchange";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "密码修改";
             this.Load += new System.EventHandler(this.pwdchange_Load);
             this.ResumeLayout(false);
