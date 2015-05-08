@@ -51,6 +51,7 @@
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -129,8 +130,6 @@
     <Compile Include="RewardPStaff\RewardPStaff.Designer.cs">
       <DependentUpon>RewardPStaff.cs</DependentUpon>
     </Compile>
-    <Compile Include="system class\DB.cs" />
-    <Compile Include="system class\sqlhelper.cs" />
     <EmbeddedResource Include="Add Staff\addStaff.resx">
       <DependentUpon>addStaff.cs</DependentUpon>
     </EmbeddedResource>
@@ -155,6 +154,9 @@
     <EmbeddedResource Include="Mob Staff\MobStaff.resx">
       <DependentUpon>MobStaff.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NoticeMan\Noticeman.resx">
+      <DependentUpon>Noticeman.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NoticeMan\Noticepub.resx">
       <DependentUpon>Noticepub.cs</DependentUpon>
     </EmbeddedResource>
@@ -166,6 +168,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="RewardPStaff\RewardPStaff.resx">
       <DependentUpon>RewardPStaff.cs</DependentUpon>
@@ -201,7 +204,52 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="res\icon\" />
+    <None Include="res\icon\Title2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\icon\Title.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\icon\y.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\icon\aaa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\appbar.key.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\icon\addstaff\userplus32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\icon\addstaff\spanner32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\icon\addstaff\user32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\icon\addstaff\pencil32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\icon\addstaff\userminus32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\icon\staffjc\smile32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\icon\staffddd\users32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\icon\role\gear32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\icon\gonggao\note32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\icon\gonggao\notepencil32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\icon\exit\stop32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

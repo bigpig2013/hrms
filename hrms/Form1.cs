@@ -42,7 +42,7 @@ namespace hrms
                 //SqlDataReader sdp = cmd.ExecuteReader();
                 if (dbpassword == textBox2.Text)
                 {
-                    MessageBox.Show("登陆成功！");
+                    
                     
                     Form2 form = new Form2();
                   
@@ -144,21 +144,7 @@ namespace hrms
             this.Close();
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            this.BackColor = Color.Red;
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            this.BackColor = Color.Blue;
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            this.BackColor = Color.Green;
-            //可以在主界面做一个简单的“换肤”功能，划分一个区域，设置 指定的颜色模式（白绿蓝，红黄蓝）等。
-        }
+        
            
          
         

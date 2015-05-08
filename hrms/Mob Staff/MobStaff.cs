@@ -48,6 +48,10 @@ namespace hrms.Mob_Staff
 
         private void button2_Click(object sender, EventArgs e)
         {
+            if (textBox1.Text == "")
+            {
+                MessageBox.Show("请输入员工编号！","提示！");
+            }
             string sqldb = "server=.;database=hrms;uid=sa;pwd=123456;";
             SqlConnection conn = new SqlConnection(sqldb);
             conn.Open();

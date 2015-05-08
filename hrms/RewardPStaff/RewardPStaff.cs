@@ -46,35 +46,43 @@ namespace hrms.RewardPStaff
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string sqldb = "server=.;database=hrms;uid=sa;pwd=123456;";
-            SqlConnection conn = new SqlConnection(sqldb);
-            conn.Open();
-            string sqljc = "insert into ygjc (id,name,departid,title,money,note) values (@id,@name,@departid,@title,@money,@note)";
-            SqlCommand cmdjc = new SqlCommand(sqljc, conn);
-
-
-
-            SqlParameter[] paras = new SqlParameter[6];
-            paras[0] = new SqlParameter("@id",SqlDbType.NVarChar);
-            paras[0].Value = textBox1.Text;
-            paras[1] = new SqlParameter("@name",SqlDbType.VarChar);
-            paras[1].Value = textBox2.Text;
-            paras[2] = new SqlParameter("@departid",SqlDbType.VarChar);
-            paras[2].Value = textBox3.Text;
-            paras[3] = new SqlParameter("@title",SqlDbType.VarChar);
-            paras[3].Value = comboBox1.Text;
-            paras[4] = new SqlParameter("@money",SqlDbType.VarChar);
-            paras[4].Value = textBox4.Text;
-            paras[5] = new SqlParameter("@note",SqlDbType.VarChar);
-            paras[5].Value = textBox5.Text;
-            foreach (SqlParameter p in paras)
+            if (textBox1.Text == "")
             {
-                cmdjc.Parameters.Add(p);
-
+                MessageBox.Show("请输入员工编号！","提示！");
             }
-            cmdjc.ExecuteNonQuery();
-            conn.Close();
-            MessageBox.Show("操作成功！");
+            else
+            {
+                string sqldb = "server=.;database=hrms;uid=sa;pwd=123456;";
+                SqlConnection conn = new SqlConnection(sqldb);
+                conn.Open();
+                string sqljc = "insert into ygjc (id,name,departid,title,money,note) values (@id,@name,@departid,@title,@money,@note)";
+                SqlCommand cmdjc = new SqlCommand(sqljc, conn);
+
+
+
+                SqlParameter[] paras = new SqlParameter[6];
+                paras[0] = new SqlParameter("@id", SqlDbType.NVarChar);
+                paras[0].Value = textBox1.Text;
+                paras[1] = new SqlParameter("@name", SqlDbType.VarChar);
+                paras[1].Value = textBox2.Text;
+                paras[2] = new SqlParameter("@departid", SqlDbType.VarChar);
+                paras[2].Value = textBox3.Text;
+                paras[3] = new SqlParameter("@title", SqlDbType.VarChar);
+                paras[3].Value = comboBox1.Text;
+                paras[4] = new SqlParameter("@money", SqlDbType.VarChar);
+                paras[4].Value = textBox4.Text;
+                paras[5] = new SqlParameter("@note", SqlDbType.VarChar);
+                paras[5].Value = textBox5.Text;
+                foreach (SqlParameter p in paras)
+                {
+                    cmdjc.Parameters.Add(p);
+
+                }
+                cmdjc.ExecuteNonQuery();
+                conn.Close();
+                MessageBox.Show("操作成功！");
+            }
+            
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -86,6 +94,11 @@ namespace hrms.RewardPStaff
             this.textBox5.Clear();
             comboBox1.Text = "";
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
