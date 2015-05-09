@@ -95,6 +95,7 @@ namespace hrms.NoticeMan
                 con.Close();
                 MessageBox.Show("添加成功！", "提示");
             }
+            this.Close();
         }
 
         private void label7_Click(object sender, EventArgs e)

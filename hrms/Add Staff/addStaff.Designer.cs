@@ -196,6 +196,8 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(223, 21);
             this.textBox1.TabIndex = 15;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
             // 
             // textBox2
             // 
@@ -203,6 +205,9 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(223, 21);
             this.textBox2.TabIndex = 16;
+            this.textBox2.Click += new System.EventHandler(this.textBox2_Click);
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged_1);
+            this.textBox2.Enter += new System.EventHandler(this.textBox2_Enter);
             // 
             // textBox8
             // 
@@ -279,6 +284,7 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.Teal;
+            this.button3.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button3.Location = new System.Drawing.Point(677, 274);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);

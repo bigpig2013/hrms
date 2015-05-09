@@ -51,7 +51,28 @@ namespace hrms
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            string dbrole = ((Form1)this.Owner).textBox1.Text;
+            string sqldb = "server=.;database=hrms;uid=sa;pwd=123456";
+            SqlConnection conn = new SqlConnection(sqldb);
+            conn.Open();
+            string sqllg = "select * from ygdl where username = '" + dbrole + "' and role = 'root'";
 
+            SqlCommand cmd = new SqlCommand(sqllg, conn);
+            cmd.CommandType = CommandType.Text;
+            SqlDataReader sdl = cmd.ExecuteReader();
+            if (sdl.Read())
+            {
+
+                Add_Staff.changestaff add = new Add_Staff.changestaff();
+
+                add.ShowDialog();
+
+
+            }
+            else
+            {
+                MessageBox.Show("您没有权限操作！");
+            }
         }
 
         
@@ -233,7 +254,7 @@ namespace hrms
 
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-
+            
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -370,6 +391,11 @@ namespace hrms
                 da.Fill(ds);
                 this.dataGridView1.DataSource = ds.Tables[0];
             }
+        }
+
+        private void dataGridView1_DoubleClick(object sender, EventArgs e)
+        {
+           
         }
     }
 }

@@ -56,26 +56,34 @@ namespace hrms.ManStaff
             {
                 MessageBox.Show("请输入员工编号！", "提示！");
             }
-            else 
+            else
             {
-                string sqldb = "server=.;database=hrms;uid=sa;pwd=123456;";
-                SqlConnection conn = new SqlConnection(sqldb);
-                conn.Open();
-                string strSql = "update ygdl set role = @role where id = '" + textBox1.Text + "'";
-                SqlCommand cmd = new SqlCommand(strSql, conn);
-                SqlParameter[] paras = new SqlParameter[1];
-                paras[0] = new SqlParameter("@role", SqlDbType.NVarChar);
-                paras[0].Value = textBox4.Text;
-
-                foreach (SqlParameter p in paras)
+                if (textBox4.Text == "")
                 {
-                    cmd.Parameters.Add(p);
+                    MessageBox.Show("请输入有效权限！", "提示！");
                 }
-                cmd.ExecuteNonQuery();
-                conn.Close();
-                MessageBox.Show("修改成功！", "提示");
+                else
+                {
+                    string sqldb = "server=.;database=hrms;uid=sa;pwd=123456;";
+                    SqlConnection conn = new SqlConnection(sqldb);
+                    conn.Open();
+                    string strSql = "update ygdl set role = @role where id = '" + textBox1.Text + "'";
+                    SqlCommand cmd = new SqlCommand(strSql, conn);
+                    SqlParameter[] paras = new SqlParameter[1];
+                    paras[0] = new SqlParameter("@role", SqlDbType.NVarChar);
+                    paras[0].Value = textBox4.Text;
+
+                    foreach (SqlParameter p in paras)
+                    {
+                        cmd.Parameters.Add(p);
+                    }
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                    MessageBox.Show("修改成功！", "提示");
+                    this.Close();
+                }
+
             }
-            
         }
 
         private void button3_Click(object sender, EventArgs e)
