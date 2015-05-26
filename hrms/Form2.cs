@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-
+using System.IO;
 namespace hrms
 {
     public partial class Form2 : Form
@@ -367,16 +367,36 @@ namespace hrms
 
         private void 权限查看ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            string dbrole = ((Form1)this.Owner).textBox1.Text;
             string sqldb = "server=.;database=hrms;uid=sa;pwd=123456";
             SqlConnection conn = new SqlConnection(sqldb);
-            string sql = "SELECT * FROM ygdl";
-            DataTable dt = new DataTable();
-            using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
+            conn.Open();
+            string sqllg = "select * from ygdl where username = '" + dbrole + "' and role = 'root'";
+
+            SqlCommand cmd = new SqlCommand(sqllg, conn);
+            cmd.CommandType = CommandType.Text;
+            SqlDataReader sdl = cmd.ExecuteReader();
+            if (sdl.Read())
             {
-                DataSet ds = new DataSet();
-                da.Fill(ds);
-                this.dataGridView1.DataSource = ds.Tables[0];
+
+                string sqlb = "server=.;database=hrms;uid=sa;pwd=123456";
+                SqlConnection con = new SqlConnection(sqlb);
+                string sql = "SELECT * FROM ygdl";
+                DataTable dt = new DataTable();
+                using (SqlDataAdapter da = new SqlDataAdapter(sql, con))
+                {
+                    DataSet ds = new DataSet();
+                    da.Fill(ds);
+                    this.dataGridView1.DataSource = ds.Tables[0];
+                }
+
+
             }
+            else
+            {
+                MessageBox.Show("您没有权限操作！");
+            }
+            
         }
 
         private void 查看公告ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -396,6 +416,33 @@ namespace hrms
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
            
+        }
+
+        private void 切换用户ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void 导出ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StreamWriter myStream;
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "text file(*.txt)|*.txt";
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                fileName = saveFileDialog.FileName;
+                if (fileName == "")
+                {
+                    MessageBox.Show("保存文件无文件名！");
+                }
+                else
+                {
+                    myStream = new StreamWriter(fileName);
+                    this.Text = "记事本-" + fileName;
+                    myStream.Write(rcBox1.Text);
+                    myStream.Close();
+                }
+            }
         }
     }
 }
