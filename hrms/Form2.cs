@@ -444,5 +444,10 @@ namespace hrms
                 }
             }
         }
+
+        private void 员工信息ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
