@@ -27,7 +27,7 @@ namespace hrms.RewardPStaff
         {
             SqlConnection con = new SqlConnection("server=.;database=hrms;uid=sa;pwd=123456");
             con.Open();
-            string sql = "select name,departid from ygdd where id = '" + textBox1.Text + "'";
+            string sql = "select 姓名,部门 from ygdd where 员工编号 = '" + textBox1.Text + "'";
             SqlCommand com = new SqlCommand(sql, con);
             com.CommandType = CommandType.Text;
             SqlDataReader sdl = com.ExecuteReader();
@@ -39,7 +39,7 @@ namespace hrms.RewardPStaff
             }
             else
             {
-                MessageBox.Show("您搜索队用户不存在！");
+                MessageBox.Show("您搜索队用户不存在！", "提示！");
             }
             con.Close();
         }
@@ -55,23 +55,23 @@ namespace hrms.RewardPStaff
                 string sqldb = "server=.;database=hrms;uid=sa;pwd=123456;";
                 SqlConnection conn = new SqlConnection(sqldb);
                 conn.Open();
-                string sqljc = "insert into ygjc (id,name,departid,title,money,note) values (@id,@name,@departid,@title,@money,@note)";
+                string sqljc = "insert into ygjc (员工编号,姓名,部门,标题,金额,备注信息) values (@员工编号,@姓名,@部门,@标题,@金额,@备注信息)";
                 SqlCommand cmdjc = new SqlCommand(sqljc, conn);
 
 
 
                 SqlParameter[] paras = new SqlParameter[6];
-                paras[0] = new SqlParameter("@id", SqlDbType.NVarChar);
+                paras[0] = new SqlParameter("@员工编号", SqlDbType.NVarChar);
                 paras[0].Value = textBox1.Text;
-                paras[1] = new SqlParameter("@name", SqlDbType.VarChar);
+                paras[1] = new SqlParameter("@姓名", SqlDbType.VarChar);
                 paras[1].Value = textBox2.Text;
-                paras[2] = new SqlParameter("@departid", SqlDbType.VarChar);
+                paras[2] = new SqlParameter("@部门", SqlDbType.VarChar);
                 paras[2].Value = textBox3.Text;
-                paras[3] = new SqlParameter("@title", SqlDbType.VarChar);
+                paras[3] = new SqlParameter("@标题", SqlDbType.VarChar);
                 paras[3].Value = comboBox1.Text;
-                paras[4] = new SqlParameter("@money", SqlDbType.VarChar);
+                paras[4] = new SqlParameter("@金额", SqlDbType.VarChar);
                 paras[4].Value = textBox4.Text;
-                paras[5] = new SqlParameter("@note", SqlDbType.VarChar);
+                paras[5] = new SqlParameter("@备注信息", SqlDbType.VarChar);
                 paras[5].Value = textBox5.Text;
                 foreach (SqlParameter p in paras)
                 {
@@ -80,7 +80,7 @@ namespace hrms.RewardPStaff
                 }
                 cmdjc.ExecuteNonQuery();
                 conn.Close();
-                MessageBox.Show("操作成功！");
+                MessageBox.Show("操作成功！", "提示！");
             }
             
         }
@@ -99,6 +99,11 @@ namespace hrms.RewardPStaff
         private void button4_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void textBox4_Click(object sender, EventArgs e)
+        {
+            this.textBox4.Clear();
         }
     }
 }

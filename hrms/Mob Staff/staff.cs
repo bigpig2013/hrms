@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace hrms.NoticeMan
+namespace hrms.Mob_Staff
 {
-    public partial class Noticeman : Form
+    public partial class staff : Form
     {
-        public Noticeman()
+        public staff()
         {
             InitializeComponent();
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

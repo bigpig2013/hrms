@@ -26,7 +26,7 @@ namespace hrms.ADD
         {
             if (textBox1.Text == "" || textBox2.Text == "" || comboBox2.Text == "")
             {
-                MessageBox.Show("没有输入编号，姓名或部门", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("没有输入编号，姓名或部门", "提示");
 
             }
 
@@ -37,35 +37,32 @@ namespace hrms.ADD
                     //添加相应列到ygxx表；
                     SqlConnection con = new SqlConnection("server=.;database=hrms;uid=sa;pwd=123456");
                     con.Open();
-                    string strSql = "insert into ygxx (id,name,sex,birth,degree,school,homeaddress,mobile,email,entrytime,workexprience,note) values (@id,@name,@sex,@birth,@degree,@school,@homeaddress,@mobile,@email,@entrytime,@workexprience,@note)";
+                    string strSql = "insert into ygxx (员工编号,姓名,性别,出生日期,学历,毕业院校,家庭地址,电话,电子邮箱,入职时间,工作经验,备注信息) values (@员工编号,@姓名,@性别,@出生日期,@学历,@毕业院校,@家庭地址,@电话,@电子邮箱,@入职时间,@工作经验,@备注信息)";
                     SqlCommand cmd = new SqlCommand(strSql, con);
-
-
-
                     SqlParameter[] paras = new SqlParameter[12];
-                    paras[0] = new SqlParameter("@id", SqlDbType.NVarChar);
+                    paras[0] = new SqlParameter("@员工编号", SqlDbType.NVarChar);
                     paras[0].Value = textBox1.Text;
-                    paras[1] = new SqlParameter("@name", SqlDbType.VarChar);
+                    paras[1] = new SqlParameter("@姓名", SqlDbType.VarChar);
                     paras[1].Value = textBox2.Text;
-                    paras[2] = new SqlParameter("@sex", SqlDbType.VarChar);
+                    paras[2] = new SqlParameter("@性别", SqlDbType.VarChar);
                     paras[2].Value = comboBox2.Text;
-                    paras[3] = new SqlParameter("@birth", SqlDbType.VarChar);
+                    paras[3] = new SqlParameter("@出生日期", SqlDbType.VarChar);
                     paras[3].Value = dateTimePicker1.Text;
-                    paras[4] = new SqlParameter("@degree", SqlDbType.VarChar);
+                    paras[4] = new SqlParameter("@学历", SqlDbType.VarChar);
                     paras[4].Value = textBox9.Text;
-                    paras[5] = new SqlParameter("@school", SqlDbType.VarChar);
+                    paras[5] = new SqlParameter("@毕业院校", SqlDbType.VarChar);
                     paras[5].Value = textBox10.Text;
-                    paras[6] = new SqlParameter("@homeaddress", SqlDbType.VarChar);
+                    paras[6] = new SqlParameter("@家庭地址", SqlDbType.VarChar);
                     paras[6].Value = textBox11.Text;
-                    paras[7] = new SqlParameter("@mobile", SqlDbType.VarChar);
+                    paras[7] = new SqlParameter("@电话", SqlDbType.VarChar);
                     paras[7].Value = textBox12.Text;
-                    paras[8] = new SqlParameter("@email", SqlDbType.VarChar);
+                    paras[8] = new SqlParameter("@电子邮箱", SqlDbType.VarChar);
                     paras[8].Value = textBox13.Text;
-                    paras[9] = new SqlParameter("@entrytime", SqlDbType.VarChar);
+                    paras[9] = new SqlParameter("@入职时间", SqlDbType.VarChar);
                     paras[9].Value = dateTimePicker2.Text;
-                    paras[10] = new SqlParameter("@workexprience", SqlDbType.VarChar);
+                    paras[10] = new SqlParameter("@工作经验", SqlDbType.VarChar);
                     paras[10].Value = textBox15.Text;
-                    paras[11] = new SqlParameter("@note", SqlDbType.VarChar);
+                    paras[11] = new SqlParameter("@备注信息", SqlDbType.VarChar);
                     paras[11].Value = textBox8.Text;
 
                     foreach (SqlParameter p in paras)
@@ -74,17 +71,17 @@ namespace hrms.ADD
                     }
                     cmd.ExecuteNonQuery();
                     //添加员工id,姓名，部门到ygdd表；
-                    string sqldd = "insert into ygdd (id,name,departid,jointime) values (@id,@name,@departid,@jointime)";
+                    string sqldd = "insert into ygdd (员工编号,姓名,部门,入职时间) values (@员工编号,@姓名,@部门,@入职时间)";
                     SqlCommand cmdd = new SqlCommand(sqldd, con);
 
                     SqlParameter[] paras1 = new SqlParameter[4];
-                    paras1[0] = new SqlParameter("@id", SqlDbType.NVarChar);
+                    paras1[0] = new SqlParameter("@员工编号", SqlDbType.NVarChar);
                     paras1[0].Value = textBox1.Text;
-                    paras1[1] = new SqlParameter("@name", SqlDbType.VarChar);
+                    paras1[1] = new SqlParameter("@姓名", SqlDbType.VarChar);
                     paras1[1].Value = textBox2.Text;
-                    paras1[2] = new SqlParameter("@departid", SqlDbType.VarChar);
+                    paras1[2] = new SqlParameter("@部门", SqlDbType.VarChar);
                     paras1[2].Value = comboBox1.Text;
-                    paras1[3] = new SqlParameter("@jointime", SqlDbType.VarChar);
+                    paras1[3] = new SqlParameter("@入职时间", SqlDbType.VarChar);
                     paras1[3].Value = dateTimePicker2.Text;
                     foreach (SqlParameter p in paras1)
                     {
@@ -94,13 +91,13 @@ namespace hrms.ADD
 
                     cmdd.ExecuteNonQuery();
                     //添加信息到ygdl表，默认密码为123456，权限默认为staff，可到用户管理里面修改相关；
-                    string sqldl = "insert into ygdl (id,username,password,role) values (@id,@username,'123456','staff')";
+                    string sqldl = "insert into ygdl (员工编号,用户名,密码,权限) values (@员工编号,@用户名,'123456','staff')";
                     SqlCommand cmdl = new SqlCommand(sqldl, con);
 
                     SqlParameter[] paras2 = new SqlParameter[2];
-                    paras2[0] = new SqlParameter("@id", SqlDbType.NVarChar);
+                    paras2[0] = new SqlParameter("@员工编号", SqlDbType.NVarChar);
                     paras2[0].Value = textBox1.Text;
-                    paras2[1] = new SqlParameter("@username", SqlDbType.VarChar);
+                    paras2[1] = new SqlParameter("@用户名", SqlDbType.VarChar);
                     paras2[1].Value = textBox2.Text;
 
                     foreach (SqlParameter p in paras2)
@@ -120,19 +117,20 @@ namespace hrms.ADD
 
 
                     con.Close();
-                    MessageBox.Show("添加成功！", "提示");
+                    MessageBox.Show("信息添加成功！", "提示");
+                    this.Close();
                 }
             }
         }
 
-            
-            
 
-          
 
-        
 
-        
+
+
+
+
+
         private void label2_Click(object sender, EventArgs e)
         {
 
@@ -143,35 +141,35 @@ namespace hrms.ADD
             this.Close();
         }
 
-        
 
-       
+
+
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             this.textBox1.Clear();
             this.textBox10.Clear();
-            this.textBox2.Clear(); 
+            this.textBox2.Clear();
             this.textBox9.Clear();
             this.textBox11.Clear();
             this.textBox12.Clear();
             this.textBox13.Clear();
             this.textBox15.Clear();
             this.textBox8.Clear();
-           
 
-            
+
+
 
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -181,12 +179,12 @@ namespace hrms.ADD
 
         private void textBox2_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void textBox2_Enter(object sender, EventArgs e)
         {
-            
+
         }
 
         private void textBox2_TextChanged_1(object sender, EventArgs e)
@@ -200,13 +198,13 @@ namespace hrms.ADD
             SqlConnection conn = new SqlConnection(sqldb);
             conn.Open();
 
-            string sqldd = "select id from ygxx where id = '" + textBox1.Text + "'";
+            string sqldd = "select 员工编号 from ygxx where 员工编号 = '" + textBox1.Text + "'";
             SqlCommand cmd = new SqlCommand(sqldd, conn);
             cmd.CommandType = CommandType.Text;
             SqlDataReader sdl = cmd.ExecuteReader();
             if (sdl.Read())
             {
-                MessageBox.Show("您输入的编号已存在！");
+                MessageBox.Show("您输入的编号已存在！", "提示！");
             }
             else
             {
@@ -214,6 +212,12 @@ namespace hrms.ADD
             }
         }
 
-        
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }
+

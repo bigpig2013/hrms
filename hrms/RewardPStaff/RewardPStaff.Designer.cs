@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RewardPStaff));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -50,11 +51,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(70, 44);
+            this.label1.Location = new System.Drawing.Point(46, 44);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 12);
+            this.label1.Size = new System.Drawing.Size(65, 12);
             this.label1.TabIndex = 0;
-            this.label1.Text = "编号：";
+            this.label1.Text = "员工编号：";
             // 
             // label2
             // 
@@ -131,12 +132,14 @@
             // 
             // textBox4
             // 
+            this.textBox4.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.textBox4.Location = new System.Drawing.Point(138, 232);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(100, 21);
             this.textBox4.TabIndex = 9;
-            this.textBox4.Text = "+50";
+            this.textBox4.Text = "请输入金额";
             this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox4.Click += new System.EventHandler(this.textBox4_Click);
             // 
             // comboBox1
             // 
@@ -206,7 +209,7 @@
             // 
             // RewardPStaff
             // 
-            this.AcceptButton = this.button2;
+            this.AcceptButton = this.button1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumSeaGreen;
@@ -228,6 +231,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(392, 479);
             this.MinimizeBox = false;

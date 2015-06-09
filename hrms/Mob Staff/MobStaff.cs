@@ -29,7 +29,7 @@ namespace hrms.Mob_Staff
         {
             SqlConnection con = new SqlConnection("server=.;database=hrms;uid=sa;pwd=123456");
             con.Open();
-            string sql = "select name,departid from ygdd where id = '"+textBox1.Text+"'";
+            string sql = "select 姓名,部门 from ygdd where 员工编号 = '"+textBox1.Text+"'";
             SqlCommand com = new SqlCommand(sql,con);
             com.CommandType = CommandType.Text;
             SqlDataReader sdl = com.ExecuteReader();
@@ -41,7 +41,7 @@ namespace hrms.Mob_Staff
             }
             else
             {
-                MessageBox.Show("您搜索队用户不存在！");
+                MessageBox.Show("您搜索队用户不存在！", "提示！");
             }
             con.Close();
         }
@@ -56,10 +56,11 @@ namespace hrms.Mob_Staff
             SqlConnection conn = new SqlConnection(sqldb);
             conn.Open();
 
-            SqlCommand cmddel = new SqlCommand("update ygdd set departid = '"+comboBox2.Text+"',jointime = '"+dateTimePicker1.Text+"',note = '"+textBox4.Text+"' where id = '"+textBox1.Text+"'",conn);
+            SqlCommand cmddel = new SqlCommand("update ygdd set 部门 = '"+comboBox2.Text+"',入职时间 = '"+dateTimePicker1.Text+"',备注信息 = '"+textBox4.Text+"' where 员工编号 = '"+textBox1.Text+"'",conn);
             cmddel.ExecuteNonQuery();
             conn.Close();
-            MessageBox.Show("员工调动成功！");
+            MessageBox.Show("员工调动成功！", "提示！");
+            this.Close();
         }
 
         private void button3_Click(object sender, EventArgs e)

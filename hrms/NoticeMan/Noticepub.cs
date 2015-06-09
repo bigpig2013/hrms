@@ -20,12 +20,12 @@ namespace hrms.NoticeMan
 
         private void Noticepub_Load(object sender, EventArgs e)
         {
-            //从ygdd表读取当前用户的id name departid信息
+            //从ygdd表读取当前用户的id name 部门信息
             string dbrole = ((Form2)this.Owner).label1.Text;
             string sqldb = "server=.;database=hrms;uid=sa;pwd=123456";
             SqlConnection conn = new SqlConnection(sqldb);
             conn.Open();
-            string sqllg = "select id,name,departid from ygdd where name = '" + dbrole + "'";
+            string sqllg = "select 员工编号,姓名,部门 from ygdd where 姓名 = '" + dbrole + "'";
 
             SqlCommand cmd = new SqlCommand(sqllg, conn);
             cmd.CommandType = CommandType.Text;
@@ -59,23 +59,23 @@ namespace hrms.NoticeMan
                 //添加相应列到fbxx表；
                 SqlConnection con = new SqlConnection("server=.;database=hrms;uid=sa;pwd=123456");
                 con.Open();
-                string strSql = "insert into fbxx (title,note,id,name,departid,pubtime) values (@title,@note,@id,@name,@departid,@pubtime)";
+                string strSql = "insert into fbxx (标题,内容,员工编号,姓名,部门,生效时间) values (@标题,@内容,@员工编号,@姓名,@部门,@生效时间)";
                 SqlCommand cmd = new SqlCommand(strSql, con);
 
 
 
                 SqlParameter[] paras = new SqlParameter[6];
-                paras[0] = new SqlParameter("@title", SqlDbType.NVarChar);
+                paras[0] = new SqlParameter("@标题", SqlDbType.NVarChar);
                 paras[0].Value = textBox1.Text;
-                paras[1] = new SqlParameter("@note", SqlDbType.VarChar);
+                paras[1] = new SqlParameter("@内容", SqlDbType.VarChar);
                 paras[1].Value = textBox2.Text;
-                paras[2] = new SqlParameter("@id",SqlDbType.VarChar);
+                paras[2] = new SqlParameter("@员工编号",SqlDbType.VarChar);
                 paras[2].Value = textBox3.Text;
-                paras[3] = new SqlParameter("@name",SqlDbType.VarChar);
+                paras[3] = new SqlParameter("@姓名",SqlDbType.VarChar);
                 paras[3].Value = textBox4.Text;
-                paras[4] = new SqlParameter("@departid",SqlDbType.VarChar);
+                paras[4] = new SqlParameter("@部门",SqlDbType.VarChar);
                 paras[4].Value = textBox5.Text;
-                paras[5] = new SqlParameter("@pubtime", SqlDbType.VarChar);
+                paras[5] = new SqlParameter("@生效时间", SqlDbType.VarChar);
                 paras[5].Value = dateTimePicker1.Text;
 
 
@@ -93,7 +93,7 @@ namespace hrms.NoticeMan
 
 
                 con.Close();
-                MessageBox.Show("添加成功！", "提示");
+                MessageBox.Show("信息发布成功！", "提示");
             }
             this.Close();
         }

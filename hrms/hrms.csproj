@@ -52,6 +52,7 @@
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -110,11 +111,11 @@
     <Compile Include="Mob Staff\MobStaff.Designer.cs">
       <DependentUpon>MobStaff.cs</DependentUpon>
     </Compile>
-    <Compile Include="NoticeMan\Noticeman.cs">
+    <Compile Include="Mob Staff\staff.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NoticeMan\Noticeman.Designer.cs">
-      <DependentUpon>Noticeman.cs</DependentUpon>
+    <Compile Include="Mob Staff\staff.Designer.cs">
+      <DependentUpon>staff.cs</DependentUpon>
     </Compile>
     <Compile Include="NoticeMan\Noticepub.cs">
       <SubType>Form</SubType>
@@ -154,8 +155,8 @@
     <EmbeddedResource Include="Mob Staff\MobStaff.resx">
       <DependentUpon>MobStaff.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NoticeMan\Noticeman.resx">
-      <DependentUpon>Noticeman.cs</DependentUpon>
+    <EmbeddedResource Include="Mob Staff\staff.resx">
+      <DependentUpon>staff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NoticeMan\Noticepub.resx">
       <DependentUpon>Noticepub.cs</DependentUpon>

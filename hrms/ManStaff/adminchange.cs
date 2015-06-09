@@ -33,7 +33,7 @@ namespace hrms.ManStaff
             string sqldb = "server=.;database=hrms;uid=sa;pwd=123456;";
             SqlConnection conn = new SqlConnection(sqldb);
             conn.Open();
-            string sqllg = "select username,role from ygdl where id = '" + textBox1.Text + "'";
+            string sqllg = "select 用户名,权限 from ygdl where 员工编号 = '" + textBox1.Text + "'";
             SqlCommand cmd = new SqlCommand(sqllg, conn);
             cmd.CommandType = CommandType.Text;
             SqlDataReader sdl = cmd.ExecuteReader();
@@ -46,7 +46,7 @@ namespace hrms.ManStaff
             }
             else
             {
-                MessageBox.Show("您搜索队用户不存在！");
+                MessageBox.Show("您搜索队用户不存在！", "提示！");
             }
         }
 
@@ -58,7 +58,7 @@ namespace hrms.ManStaff
             }
             else
             {
-                if (textBox4.Text == "")
+                if (comboBox1.Text == "")
                 {
                     MessageBox.Show("请输入有效权限！", "提示！");
                 }
@@ -67,11 +67,11 @@ namespace hrms.ManStaff
                     string sqldb = "server=.;database=hrms;uid=sa;pwd=123456;";
                     SqlConnection conn = new SqlConnection(sqldb);
                     conn.Open();
-                    string strSql = "update ygdl set role = @role where id = '" + textBox1.Text + "'";
+                    string strSql = "update ygdl set 权限 = @权限 where 员工编号 = '" + textBox1.Text + "'";
                     SqlCommand cmd = new SqlCommand(strSql, conn);
                     SqlParameter[] paras = new SqlParameter[1];
-                    paras[0] = new SqlParameter("@role", SqlDbType.NVarChar);
-                    paras[0].Value = textBox4.Text;
+                    paras[0] = new SqlParameter("@权限", SqlDbType.NVarChar);
+                    paras[0].Value = comboBox1.Text;
 
                     foreach (SqlParameter p in paras)
                     {
