@@ -273,14 +273,14 @@ namespace hrms
 
         private void 退出系统ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            
         }
 
         
 
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            
+            textBox6.Text = dataGridView1.CurrentCell.Value.ToString();
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -291,6 +291,7 @@ namespace hrms
         private void Form2_SizeChanged(object sender, EventArgs e)
         {
             dataGridView1.SetBounds(this.ClientRectangle.Left + groupBox1.Width, this.ClientRectangle.Top + menuStrip1.Height + label3.Height, this.ClientRectangle.Right, this.ClientRectangle.Bottom);
+            //textBox6.SetBounds(this.ClientRectangle.Left,this.ClientRectangle.Right,this.ClientRectangle.Top,this.ClientRectangle.Bottom);
         }
 
         
@@ -610,11 +611,31 @@ namespace hrms
             }
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void groupBox6_Enter(object sender, EventArgs e)
         {
-            hrms.Mob_Staff.staff add = new hrms.Mob_Staff.staff();
 
-            add.ShowDialog();
         }
+
+       
+
+        private void 切换用户ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 form = new Form1();
+            form.Show();
+        }
+
+        private void 关于ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            hrms.about.about ab = new about.about();
+            ab.ShowDialog();
+        }
+
+        private void 退出系统ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+        
+       
     }
 }

@@ -71,9 +71,10 @@ namespace hrms.ADD
                     }
                     cmd.ExecuteNonQuery();
                     //添加员工id,姓名，部门到ygdd表；
-                    string sqldd = "insert into ygdd (员工编号,姓名,部门,入职时间) values (@员工编号,@姓名,@部门,@入职时间)";
-                    SqlCommand cmdd = new SqlCommand(sqldd, con);
-
+                    SqlConnection conn = new SqlConnection("server=.;database=hrms;uid=sa;pwd=123456");
+                    conn.Open();
+                    string Sqldd = "insert into ygdd (员工编号,姓名,部门,入职时间) values (@员工编号,@姓名,@部门,@入职时间)";
+                    SqlCommand cmdd = new SqlCommand(Sqldd, conn);
                     SqlParameter[] paras1 = new SqlParameter[4];
                     paras1[0] = new SqlParameter("@员工编号", SqlDbType.NVarChar);
                     paras1[0].Value = textBox1.Text;
@@ -83,6 +84,7 @@ namespace hrms.ADD
                     paras1[2].Value = comboBox1.Text;
                     paras1[3] = new SqlParameter("@入职时间", SqlDbType.VarChar);
                     paras1[3].Value = dateTimePicker2.Text;
+                    
                     foreach (SqlParameter p in paras1)
                     {
                         cmdd.Parameters.Add(p);
@@ -215,6 +217,16 @@ namespace hrms.ADD
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox12_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //如果输入的不是数字键，也不是回车键、Backspace键，则取消该输入
+            if (!(Char.IsNumber(e.KeyChar)) && e.KeyChar != (char)13 && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+            } 
+            
         }
 
 

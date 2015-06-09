@@ -21,12 +21,11 @@ namespace hrms.NoticeMan
         private void Noticepub_Load(object sender, EventArgs e)
         {
             //从ygdd表读取当前用户的id name 部门信息
-            string dbrole = ((Form2)this.Owner).label1.Text;
+            textBox4.Text = ((Form2)this.Owner).label1.Text;
             string sqldb = "server=.;database=hrms;uid=sa;pwd=123456";
             SqlConnection conn = new SqlConnection(sqldb);
             conn.Open();
-            string sqllg = "select 员工编号,姓名,部门 from ygdd where 姓名 = '" + dbrole + "'";
-
+            string sqllg = "select 员工编号,部门 from ygdd where 姓名 = '" +textBox4.Text+ "'";
             SqlCommand cmd = new SqlCommand(sqllg, conn);
             cmd.CommandType = CommandType.Text;
             SqlDataReader sdl = cmd.ExecuteReader();
@@ -34,8 +33,8 @@ namespace hrms.NoticeMan
             {
 
                 textBox3.Text = sdl[0].ToString();
-                textBox4.Text = sdl[1].ToString();
-                textBox5.Text = sdl[2].ToString();
+                //textBox4.Text = sdl[1].ToString();
+                textBox5.Text = sdl[1].ToString();
 
 
             }
@@ -94,8 +93,9 @@ namespace hrms.NoticeMan
 
                 con.Close();
                 MessageBox.Show("信息发布成功！", "提示");
+                this.Close();
             }
-            this.Close();
+            
         }
 
         private void label7_Click(object sender, EventArgs e)

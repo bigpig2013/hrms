@@ -63,6 +63,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="about\about.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="about\about.Designer.cs">
+      <DependentUpon>about.cs</DependentUpon>
+    </Compile>
     <Compile Include="Add Staff\addStaff.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,12 +117,6 @@
     <Compile Include="Mob Staff\MobStaff.Designer.cs">
       <DependentUpon>MobStaff.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mob Staff\staff.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Mob Staff\staff.Designer.cs">
-      <DependentUpon>staff.cs</DependentUpon>
-    </Compile>
     <Compile Include="NoticeMan\Noticepub.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +131,9 @@
     <Compile Include="RewardPStaff\RewardPStaff.Designer.cs">
       <DependentUpon>RewardPStaff.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="about\about.resx">
+      <DependentUpon>about.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Add Staff\addStaff.resx">
       <DependentUpon>addStaff.cs</DependentUpon>
     </EmbeddedResource>
@@ -154,9 +157,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mob Staff\MobStaff.resx">
       <DependentUpon>MobStaff.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Mob Staff\staff.resx">
-      <DependentUpon>staff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NoticeMan\Noticepub.resx">
       <DependentUpon>Noticepub.cs</DependentUpon>
@@ -251,6 +251,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="res\icon\addstaff\ic_sort_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\icon\about\110652133878c2cca3l.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

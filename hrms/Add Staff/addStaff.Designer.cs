@@ -242,9 +242,11 @@
             // textBox12
             // 
             this.textBox12.Location = new System.Drawing.Point(395, 134);
+            this.textBox12.MaxLength = 11;
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(223, 21);
             this.textBox12.TabIndex = 26;
+            this.textBox12.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox12_KeyPress);
             // 
             // textBox13
             // 

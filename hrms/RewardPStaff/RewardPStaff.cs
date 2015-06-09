@@ -81,6 +81,7 @@ namespace hrms.RewardPStaff
                 cmdjc.ExecuteNonQuery();
                 conn.Close();
                 MessageBox.Show("操作成功！", "提示！");
+                this.Close();
             }
             
         }

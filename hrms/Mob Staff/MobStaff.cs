@@ -27,23 +27,24 @@ namespace hrms.Mob_Staff
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection("server=.;database=hrms;uid=sa;pwd=123456");
-            con.Open();
-            string sql = "select 姓名,部门 from ygdd where 员工编号 = '"+textBox1.Text+"'";
-            SqlCommand com = new SqlCommand(sql,con);
-            com.CommandType = CommandType.Text;
-            SqlDataReader sdl = com.ExecuteReader();
+            string sqldb = "server=.;database=hrms;uid=sa;pwd=123456;";
+            SqlConnection conn = new SqlConnection(sqldb);
+            conn.Open();
+
+            string sqldd = "select 姓名,部门 from ygdd where 员工编号 = '" + textBox1.Text + "'";
+            SqlCommand cmd = new SqlCommand(sqldd, conn);
+            cmd.CommandType = CommandType.Text;
+            SqlDataReader sdl = cmd.ExecuteReader();
             if (sdl.Read())
             {
                 textBox2.Text = sdl[0].ToString();
                 textBox3.Text = sdl[1].ToString();
-
             }
             else
             {
                 MessageBox.Show("您搜索队用户不存在！", "提示！");
             }
-            con.Close();
+            conn.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -56,7 +57,7 @@ namespace hrms.Mob_Staff
             SqlConnection conn = new SqlConnection(sqldb);
             conn.Open();
 
-            SqlCommand cmddel = new SqlCommand("update ygdd set 部门 = '"+comboBox2.Text+"',入职时间 = '"+dateTimePicker1.Text+"',备注信息 = '"+textBox4.Text+"' where 员工编号 = '"+textBox1.Text+"'",conn);
+            SqlCommand cmddel = new SqlCommand("update ygdd set 部门 = '"+comboBox2.Text+"',调动时间 = '"+dateTimePicker1.Text+"',备注信息 = '"+textBox4.Text+"' where 员工编号 = '"+textBox1.Text+"'",conn);
             cmddel.ExecuteNonQuery();
             conn.Close();
             MessageBox.Show("员工调动成功！", "提示！");
