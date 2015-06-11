@@ -218,6 +218,7 @@
             this.Name = "Noticepub";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "公告发布";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Noticepub_FormClosed);
             this.Load += new System.EventHandler(this.Noticepub_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -114,7 +114,7 @@ namespace hrms
             {
 
                 Add_Staff.changestaff add = new Add_Staff.changestaff();
-
+                add.Owner = this;
                 add.ShowDialog();
 
 
@@ -139,7 +139,7 @@ namespace hrms
             {
 
                 ADD.addStaff add = new ADD.addStaff();
-
+                add.Owner = this;
                 add.ShowDialog();
 
 
@@ -164,7 +164,7 @@ namespace hrms
             {
 
                 hrms.Add_Staff.delstaff add = new Add_Staff.delstaff();
-
+                add.Owner = this;
                 add.ShowDialog();
 
 
@@ -199,7 +199,7 @@ namespace hrms
             {
 
                 hrms.ManStaff.adminchange add = new ManStaff.adminchange();
-
+                add.Owner = this;
                 add.ShowDialog();
 
 
@@ -224,6 +224,7 @@ namespace hrms
             {
 
                 hrms.ManStaff.pwdchange add = new ManStaff.pwdchange();
+                add.Owner = this;
                 add.ShowDialog();
 
 
@@ -255,7 +256,6 @@ namespace hrms
 
                 hrms.NoticeMan.Noticepub add = new NoticeMan.Noticepub();
                 add.Owner = this;
-
                 add.ShowDialog();
 
 
@@ -291,7 +291,6 @@ namespace hrms
         private void Form2_SizeChanged(object sender, EventArgs e)
         {
             dataGridView1.SetBounds(this.ClientRectangle.Left + groupBox1.Width, this.ClientRectangle.Top + menuStrip1.Height + label3.Height, this.ClientRectangle.Right, this.ClientRectangle.Bottom);
-            //textBox6.SetBounds(this.ClientRectangle.Left,this.ClientRectangle.Right,this.ClientRectangle.Top,this.ClientRectangle.Bottom);
         }
 
         
@@ -309,7 +308,7 @@ namespace hrms
             {
 
                 hrms.RewardPStaff.RewardPStaff add = new RewardPStaff.RewardPStaff();
-
+                add.Owner = this;
                 add.ShowDialog();
 
 
@@ -335,7 +334,6 @@ namespace hrms
 
                 hrms.Mob_Staff.MobStaff add = new Mob_Staff.MobStaff();
                 add.Owner = this;
-
                 add.ShowDialog();
 
 

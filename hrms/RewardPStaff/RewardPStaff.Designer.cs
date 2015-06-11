@@ -239,6 +239,7 @@
             this.Name = "RewardPStaff";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "员工奖惩";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RewardPStaff_FormClosed);
             this.Load += new System.EventHandler(this.RewardPStaff_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

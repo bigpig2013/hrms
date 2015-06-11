@@ -109,15 +109,6 @@ namespace hrms.ADD
                     }
 
                     cmdl.ExecuteNonQuery();
-
-
-
-
-
-
-
-
-
                     con.Close();
                     MessageBox.Show("信息添加成功！", "提示");
                     this.Close();
@@ -227,6 +218,20 @@ namespace hrms.ADD
                 e.Handled = true;
             } 
             
+        }
+
+        private void addStaff_FormClosed(object sender, FormClosedEventArgs e)
+        {           
+            string sqldb = "server=.;database=hrms;uid=sa;pwd=123456";
+            SqlConnection conn = new SqlConnection(sqldb);
+            string sql = "SELECT * FROM ygxx";
+            DataTable dt = new DataTable();
+            using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
+            {
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                ((Form2)this.Owner).dataGridView1.DataSource = ds.Tables[0];
+            }
         }
 
 

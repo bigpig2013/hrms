@@ -387,6 +387,7 @@
             this.Name = "addStaff";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "添加员工";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.addStaff_FormClosed);
             this.Load += new System.EventHandler(this.addStaff_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

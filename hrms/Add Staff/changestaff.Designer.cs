@@ -195,6 +195,7 @@
             this.Name = "changestaff";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "修改信息";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.changestaff_FormClosed);
             this.Load += new System.EventHandler(this.adminstaff_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

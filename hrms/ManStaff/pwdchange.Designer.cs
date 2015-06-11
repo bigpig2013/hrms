@@ -174,6 +174,7 @@
             this.Name = "pwdchange";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "密码修改";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.pwdchange_FormClosed);
             this.Load += new System.EventHandler(this.pwdchange_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

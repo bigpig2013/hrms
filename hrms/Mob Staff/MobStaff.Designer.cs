@@ -225,6 +225,7 @@
             this.Name = "MobStaff";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "员工调动";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MobStaff_FormClosed);
             this.Load += new System.EventHandler(this.MobStaff_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

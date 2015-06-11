@@ -179,6 +179,7 @@
             this.Name = "adminchange";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "权限修改";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.adminchange_FormClosed);
             this.Load += new System.EventHandler(this.adminchange_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

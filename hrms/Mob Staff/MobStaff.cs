@@ -68,5 +68,19 @@ namespace hrms.Mob_Staff
         {
             this.Close();
         }
+
+        private void MobStaff_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            string sqldb = "server=.;database=hrms;uid=sa;pwd=123456";
+            SqlConnection conn = new SqlConnection(sqldb);
+            string sql = "SELECT * FROM ygdd";
+            DataTable dt = new DataTable();
+            using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
+            {
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                ((Form2)this.Owner).dataGridView1.DataSource = ds.Tables[0];
+            }
+        }
     }
 }
